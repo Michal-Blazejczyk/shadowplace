@@ -1,0 +1,64 @@
+.burger
+{
+    position: fixed;
+    top: 80px;
+    right: 49px;
+    font-size: 140px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.4s linear;
+    line-height: 50px;
+    z-index: 1;
+    
+}
+.burger:hover
+{
+    cursor: pointer;
+   
+}
+aside
+{
+    position: fixed;
+    top: 60px;
+    left: -700px;
+    width: 700px;
+    transition: 1s linear;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.i.show
+{
+    display:none
+}
+aside.show
+{
+    left: 0;
+}
+.fas
+{
+    display: none;
+}
+.show
+{
+    display: block;
+}
+nav ul li a
+{
+    font-size: 15px;
+    color: white;
+    margin-left: 0px;
+    text-decoration: none;
+    display: inline-block;
+}
+nav ul li
+{
+    margin-top: 10px ;
+    display: inline-block;
+    padding: 5px 20px;
+    
+}
+nav ul 
+{
+    margin-left: 70px;
+    
+    list-style: none;
+}

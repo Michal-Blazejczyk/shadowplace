@@ -10,6 +10,7 @@ body {
     background-color: #aaa;
     color: #fff;
 }
+
 .header {
     position: fixed;
     max-width: 1240px;
@@ -60,19 +61,28 @@ i {
     color: rgb(23,93,101);
     border: 1px solid #f18e04;
 }
-.navigation {
+ /* .navigation {
     position: absolute;
+    width: 50%;
     top: 15%;
     right: 5%;
     z-index:1 ;
     background-color: rgba(0, 0, 0, 0.4);
-    padding: 10px;
-}
+    padding: 13px;
+    text-align: center;
+} 
+
 .navigation a {
     color: white;  
     text-decoration: none;
     font-size: 20px;
-    margin: 0 20px;
+    margin: 5px;
+    padding: 10px;
+    border-right: 1px solid white;
+    
+} */
+.navigation a:nth-last-child {
+    display: block;
 }
 @keyframes shakes
     {
