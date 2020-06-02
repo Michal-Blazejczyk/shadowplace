@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 200vh;
+}
+body {
+    background-color: #aaa;
+    color: #fff;
+}
+.header {
+    position: fixed;
+    max-width: 1240px;
+    z-index: 2;
+    width: 100%;
+    background-color:#f1ecec ; 
+}
+.header__logo {
+    width: 130px;
+    margin: 5px 70px;
+}
+h1 {
+    color: rgb(23,93,101);
+    font-size: 13px;
+    display: inline-block;
+}
+i {
+    color:#f18e04; 
+    font-size: 11px;  
+}
+.head {
+    display: inline-block;
+    font-size: 12px;
+    color: black;
+    margin: 0px 10px 10px 20px ;
+}
+.header__p {
+    font-size: 12px;
+    color: black;
+}
+.header__pomoc {
+   
+}
+.btn {
+    position: absolute;
+    margin: 12px 80px;
+    border: 1px solid rgb(23,93,101);
+    border-radius: 40px;
+    padding: 6px 14px;
+    background-color: #fff;
+    font-size: 11px;
+    color: #f18e04;
+    text-transform: uppercase;
+    font-family: arial;
+    animation: shakes 5s linear infinite;
+}
+.btn:hover {
+    color: rgb(23,93,101);
+    border: 1px solid #f18e04;
+}
+.navigation {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    z-index:1 ;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+}
+.navigation a {
+    color: white;  
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px;
+}
+@keyframes shakes
+    {
+        0%{transform: translateX(0);}
+        90%{transform: translateX(0);}
+        91%{transform: translateX(20px);}
+        92%{transform: translateX(-20px);}
+        93%{transform: translateX(20px);}
+        94%{transform: translateX(-20px);}
+        95%{transform: translateX(20px);}
+        96%{transform: translateX(-20px);}
+        100%{transform: translateX(0);}
+    }
+    .foto {
+        background-position: 40% 90%;
+    }
