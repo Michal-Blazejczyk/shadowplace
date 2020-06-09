@@ -1,0 +1,148 @@
+@media (max-width: 2900px) {
+    .head {    
+        font-size: 12px;
+        margin: 0px 10px 10px 180px;
+
+    }
+}
+@media (max-width: 1900px) {
+ 
+        .head {    
+            font-size: 12px;  
+            margin: 0px 40px 10px 110px;       
+    }
+    
+} 
+@media (max-width: 1600px) {
+
+        .head {     
+            margin: 0 0 10px 10px 100px;       
+        }
+}
+@media (max-width: 1440px) {
+
+        .head {    
+            margin: 0px 10px 10px 80px;   
+        }
+}
+@media (max-width: 1240px) {
+        .head {    
+            margin: 0px 10px 10px 40px;
+        }
+
+}
+@media (max-width: 1000px) {
+        .head {    
+            margin: 0px 10px 10px 20px;
+        }
+        .head__800px-off {
+            display: none;
+        }
+        .move_baner-descryption {
+            font-size: 14px;
+        }
+}
+@media (max-width: 800px) {
+
+    .head {    
+        margin: 0px 10px 10px 10px;
+    }  
+    .btn {
+        padding: 10px 40px;
+    }  
+    .header__logo {
+        width: 110px;
+        margin-top: 10px;
+    } 
+    .head__title,
+    .header__time {
+        font-size: 10px;
+    } 
+    .header__wrap {
+        margin-left: 10px;
+    }
+    .move_baner-picture {
+        width: 200px; 
+    }
+    .move_baner {
+        height: 190px;
+    }
+    .move_baner-descryption {
+        font-size: 11px;
+    }
+    .nav {
+        width: 50%;
+    }
+}
+@media (max-width: 640px) {
+    
+    .head__640px {
+        display: none;
+    }
+    .btn {
+        padding: 10px 20px;
+    } 
+    .move_baner-picture {
+        width: 120px; 
+    }
+    .move_baner {
+        height: 150px;
+    } 
+    .move_baner-descryption {
+        font-size: 9px;
+        margin: 15px;
+    } 
+    .accesories__main-title {
+        font-size: 17px;
+    } 
+    .nav {
+        width: 70%;
+    }
+}
+@media (max-width: 480px) {
+
+    .head__480px-off {
+        display: none;
+    } 
+    .btn {
+        margin: 20px 0 0;
+        padding: 10px 8px;
+    }
+    .move_baner-picture {
+        width: 96px; 
+    }
+    .move_baner-descryption {
+        font-size: 9px;
+        margin: 10px;
+    } 
+    .move_baner {
+        height: 150px;
+    } 
+    .move_baner-title {
+        font-size: 15px;
+    }
+    .accesories__description {
+        font-size: 12px;   
+    } 
+    .accesories__h2 {       
+        font-size: 20px;      
+    }
+    .accesories__main-title {
+        font-size: 15px;
+        padding: 17px 0;
+    } 
+    .nav {
+        width: 100%;
+    }
+}
+
+
+
+
+@media (max-width: 320px) {
+
+        
+        .head {
+            color: chartreuse;
+        }
+}
