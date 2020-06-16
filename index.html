@@ -4,48 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona_zaluzje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/prefixfree.min.js">
     <link rel="stylesheet" href="css/baner.css">
     <link rel="stylesheet" href="css/hamburger.css">
     <link rel="stylesheet" href="css/mediaquery.css">
 
 </head>
 <body>
+    
     <header class="header">
         <div class="header__wrap">
-            <img class="header__logo" src="image/logo.png" alt="logo firmy"></img> 
+                <a href="index.html"><img class="header__logo headerLogo__320" src="image/logo.png" alt="zdjęcie loga" ></a>
 
-            <div class="head head__640px">
+            <div class="head head__800px-off">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
                 <h1 class="head__title">Pomoc</h1>
-                <p class="header__p"><b>602-307-003</b></p>
+                <p class="header__time"><b>602-307-003</b></p>
             </div>
-
             <div class="head head__800px-off">
                 <i class="fa fa-times-circle" aria-hidden="true"></i>
                 <h1 class="head__title">Godzina otwarcia</h1>
                 <p class="header__time"><b>9:00-20:00</b></p>
             </div>
-
-            <div class="head head__480px-off">
+            <div class="head head__800px-off">
                 <i class="fa fa-at" aria-hidden="true"></i>
-                <h1 class="head__title"><b>E-mail</b></h1>
-                <p class="header__p"><b>kontakt@shadowplace.pl</b></p>   
+                <h1 class="head__title">E-mail</h1>
+                <p class="header__time"><b>kontakt@shadowplace.pl</b></p>
+            </div>
+
+            <div class="head head__btn">
+              
+                <div class="head__button">
+                    <button class="btn">napisz do nas</button>
+                <div>     
             </div>
             
-            <div class="head__button">
-                <button class="btn">napisz do nas</button>
-            <div>    
+              
         </div>
     </header>
     
     <main>
         <section class="baner">
-            <img class="baner__foto" src="image/lobby.jpg" alt="">
-            <img class="baner__foto" src="image/dinner-table.jpg" alt="">
-            <img class="baner__foto" src="image/home.jpg" alt="">
+            <img class="baner__foto" src="image/home-1280.jpg" alt="zdjęcie lobby">
+            <img class="baner__foto" src="image/dinner-table1280.jpg" alt="zdjęcia dinner-table">
+            <img class="baner__foto" src="image/lobby-1280.jpg" alt="zdjecie-home">
 
             <p class="baner__p">Tanio</p>
             <p class="baner__p">Szybko</p>
@@ -55,71 +61,6 @@
             <span class="menu-btn__burger"></span>
         </div>   
       
-        <nav class="nav">
-            <ul class="menu-nav">
-                <li class="menu-nav__item active">
-                   <a href="index.html" class="menu-nav__link">
-                      żaluzje pionowe 
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="about.html" class="menu-nav__link">
-                       Rolety
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="project.html" class="menu-nav__link">
-                       żaluzje panelowe
-                   </a>   
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       żaluzje plisowane
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       żaluzje pionowe
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       rolety rzyskie
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       moskitiery
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       karnisze
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       żaluzje sunshield
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       ogrody zimowe
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       maty drewniano-bambusowych
-                   </a>   
-                </li>
-                <li class="menu-nav__item">
-                   <a href="Contact.html" class="menu-nav__link">
-                       markizy
-                   </a>   
-                </li>
-            </ul>
-        </nav>
-
-   
     <section class="main__baner">
         <span class="main__baner-span">Umów się z nami na bezpłatny pomiar</span>
         <span class="main__baner-span">Zobacz nasze produkty</span>
@@ -127,7 +68,83 @@
         <span class="main__baner-span">Zespół ekspertów - Zawsze dostępny</span>
     </section>
    
-    
+    <nav class="nav">
+        <ul class="menu-nav">
+
+            <li class="menu-nav__item active">
+               <a href="about_us.html" class="menu-nav__link">
+                  O NAS
+               </a>   
+            </li>
+            <li class="menu-nav__item active">
+               <a href="cennik_montazu.html" class="menu-nav__link">
+                  CENNIK MONTAŻU
+               </a>   
+            </li>
+            <li class="menu-nav__item active">
+               <a href="vertical.html" class="menu-nav__link">
+                  żaluzje poziome 
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="rolety.html" class="menu-nav__link">
+                   Rolety
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="zaluzje_pionowe.html" class="menu-nav__link">
+                   żaluzje pionowe
+               </a>   
+            </li>
+            
+            <li class="menu-nav__item">
+               <a href="żaluzje_plisowane.html" class="menu-nav__link">
+                   żaluzje plisowane
+               </a>   
+            </li>
+            </li>
+            <li class="menu-nav__item">
+               <a href="rolety_rzymskie.html" class="menu-nav__link">
+                   rolety rzymskie
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="moskitiery.html" class="menu-nav__link">
+                   moskitiery
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="zaluzje_panelowe.html" class="menu-nav__link">
+                    żaluzje panelowe
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="karnisze.html" class="menu-nav__link">
+                   karnisze
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="sunshield.html" class="menu-nav__link">
+                   żaluzje sunshield
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="ogrody_zimowe.html" class="menu-nav__link">
+                   ogrody zimowe
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="maty_bambusowe.html" class="menu-nav__link">
+                   maty drewniano-bambusowych
+               </a>   
+            </li>
+            <li class="menu-nav__item">
+               <a href="markizy.html" class="menu-nav__link">
+                   markizy
+               </a>   
+            </li>
+        </ul>
+    </nav>
 
     <section class="accesories" >  
 
@@ -171,72 +188,118 @@
                     </article>                   
                     
     </section>
-
+    <section class="aboutFirst"> 
     <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
-    <section class="about">
+    
         <article class="move_baner art1">
             <h2 class="move_baner-title">ZASADY GWARANCJI</h2>
-            <img class="move_baner-picture" src="image/zasady_gwarancji.jpg">
+           <a href="zasady_gwarancji.html"><img class="move_baner-picture" src="image/bez1.jpg"></a>
             <p class="move_baner-descryption">
-                Na oferowane przez nas systemy udzielamy trzy letniej gwarancji mechanicznej. Oznacza to, że jeżeli produkt jest użytkowany zgodnie z przeznaczeniem i został właściwie zamontowany, elementy mechaniczne są objęte 36 miesięczną gwarancją. Ważne:         
+                Na oferowane przez nas systemy udzielamy trzy letniej gwarancji mechanicznej. Oznacza to, że jeżeli produkt jest użytkowany zgodnie z przeznaczeniem i został właściwie zamontowany, elementy mechaniczne są objęte 36 miesięczną gwarancją. Ważne:  
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>          
             </p>
+            <div style="clear: both;"></div>
         </article>
+       
         <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
         <article class="move_baner art2">
             <h2 class="move_baner-title">ZESPÓŁ EKSPERTÓW</h2>
-            <img class="move_baner-picture" src="image/zespol_expertow.jpg">
+            <a href="#"><img class="move_baner-picture" src="image/zespol_exspertow.jpg"></a>
             <p class="move_baner-descryption">
-                Zatrudniamy profesjonalnych pracowników z doświadczeniem, gwarantującym długoletnie użytkowanie sprzedawanych przez nas produktów. Dostarczymy wszelkich niezbędnych informacji oraz pomożemy w wyborze optymalnego produktu spełniającego oczekiwania klienta (system dostosowanego do miejsca i warunków jego funkcjonowania). 
-            </p>
+                Zatrudniamy profesjonalnych pracowników z doświadczeniem, gwarantującym długoletnie użytkowanie sprzedawanych przez nas produktów. Dostarczymy wszelkich niezbędnych informacji... 
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>       
+            </p>            
         </article>
+
         <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
         <article class="move_baner art3">
             <h2 class="move_baner-title">BEZPŁATNY POMIAR</h2>
-            <img class="move_baner-picture" src="image/bezplatny_pomiar.jpg">
+            <a href="bezpłatny_pomiar.html"><img class="move_baner-picture" src="image/bezplatny_pomiar.jpg"></a>
             <p class="move_baner-descryption">
                 Umówcie się Państwo na bezpłatną konsultację i pomiar. Wizyta nie zobowiązuje do zakupu. 
-                Nasz pracownik skontaktuje się z Państwem natychmiast jak to będzie możliwe. Zostanie ustalony termin wizyty dogodny dla Państwa i możliwy do zrealizowania przez naszego przedstawiciela w najkrótszym czasie od chwili potwierdzenia wizyty. 
-            </p>
+                Nasz pracownik skontaktuje się z Państwem natychmiast jak to będzie możliwe. Zostanie ustalony... 
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>       
+            </p>  
+            <div style="clear: both;"></div>     
         </article>
+
         <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
         <article class="move_baner art4">
             <h2 class="move_baner-title">INSTRUKCJA POMIARU</h2>
-            <img class="move_baner-picture" src="image/instrukcja_montazu.jpg">
+            <a href="instrukcja pomiaru.html"><img class="move_baner-picture" src="image/instrukcja_montazu.jpg"></a>
             <p class="move_baner-descryption">
-                Pomiaru dokonujemy zawsze w centymetrach (np. 56,6 cm). Podajemy szerokość całkowitą i wysokość całkowitą. Zaznaczamy stronę umieszczenia obsługi (np. lewa), przy tym uwzględniamy miejsce znajdowania się wszelkich przeszkód (np. klamki okna) a także uwarunkowań konstrukcyjnych (np. sposobu otwierania skrzydła okna). Stronę obsługi dobieramy tak, aby sterowanie produktem było komfortowe i nie kolidowało z żadnym elementem zewnętrznym. 
-            </p>
+                Pomiaru dokonujemy zawsze w centymetrach (np. 56,6 cm). Podajemy szerokość całkowitą i wysokość całkowitą. Zaznaczamy stronę umieszczenia obsługi (np. lewa), przy tym uwzględniamy miejsce znajdowania się wszelkich przeszkód 
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>       
+            </p> 
+            <div style="clear: both;"></div>   
         </article>
+
         <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
         <article class="move_baner art5">
             <h2 class="move_baner-title">INSTRUKCJA MONTAŻU</h2>
-            <img class="move_baner-picture" src="image/instrukcja_pomiaru.jpg">
+            <a href="instrukcja montazu.html"><img class="move_baner-picture" src="image/instrukcja_pomiaru.jpg"></a>
             <p class="move_baner-descryption">
-                Produkt należy zamontować zgodnie z przeznaczeniem i w miejscu dla którego dokonano pomiaru. Sposób mocowania powinien być zgodny ze specyfikacją zamówienia. Pomiar powinien być wykonany zgodnie z „Instrukcją pomiaru”. Do montażu należy użyć tylko i wyłącznie załączonych akcesoriów. Montaż niezgodny z instrukcją może powodować wadliwe funkcjonowanie produktu i utratę gwarancji. 
-            </p>
+                Produkt należy zamontować zgodnie z przeznaczeniem i w miejscu dla którego dokonano pomiaru. Sposób mocowania powinien być zgodny ze specyfikacją zamówienia. Pomiar powinien być wykonany zgodnie z „Instrukcją pomiaru"... 
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>        
+            </p> 
+            <div style="clear: both;"></div>          
         </article>
+    </section>
+<section class="about">     
         <hr style="border: 0px; background: rgb(57, 163,161); height: 1px;">
-        <article class="move_baner art6">
+        <article class="move_baner op1">
             <h2 class="move_baner-title">PROMOCJA</h2>
-            <img class="move_baner-picture" src="image/promocje.jpg">
+            <a href="promocje.html"><img class="move_baner-picture" src="image/promocje.jpg"></a>
             <p class="move_baner-descryption">
-                Zapraszamy do śledzenia naszych propozycji promocyjnych a także systemu kodów rabatowych. Nasze specjalne oferty obejmują różne formy uatrakcyjnienia oferty sprzedawanej w sklepie oraz produktów zamawianych indywidualnie.
-    
-                Zachęcamy do skorzystania ze stałych promocji:
+                Zapraszamy do śledzenia naszych propozycji promocyjnych a także systemu kodów rabatowych. Nasze specjalne oferty obejmują różne formy uatrakcyjnienia oferty sprzedawanej... 
                 
-                – przy zamówieniu o wartości przekraczającej 3000 złotych istnieje możliwość negocjowania cen;
-                
-                – cena montażu każdego produktu powyżej 10-ciu pomniejszona zostanie o 25%.
+                <p class="look__p"><span class="look__title">Zobacz więcej...</span></p>       
             </p>
+            <div style="clear: both;"></div>
+           
+        </article>
+        
+        <article class=" op2 move_baner-specjal">
+            <h2 class="move_baner-title">Galeria</h2>
+            <a href="galeria.html"><img class="move_baner-picture-specjal " src="image/nasze_projekty.jpg"></a>
+            <p class="move_baner-descryption">
+                  Zobacz niektóre z naszych projektów...                     
+                <p class="look__p"></p>        
+            </p>
+           
         </article>
         </section>
-   
+        
 </main>
-    <footer></footer>
+<div style="clear: both;"></div>
+    <footer class="footer">
+      <!--  <div class="footer__container">
+                       -->
+            <div class="footer__menu">
+                    
+                <a href="index.html">Home</a>
+                <a href="about_us.html">O firmie</a>
+                <a href="#">Kontact</a>
+                <a href="regulamin.html">Regulamin</a>
+                <a href="cookies.html">Polityka COOKIES</a>
+            
+                <div class="footer__fonts">    
+                    <i class="fab fa-cc-visa font"></i>
+                    <i class="fab fa-cc-mastercard font"></i>
+                    <i class="fab fa-cc-amex font"></i>
+                    <i class="fab fa-cc-paypal font"></i>
+                    <p class="footer__copy">&copy Shadow Place 2020 Rezalizacja: Michael B</p>
+                </div>
+            </div>     
+      <!--  v><di -->
+
+    </footer>
 
     <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script> 
     <script src="js/menu.js"></script>
-    <script src="jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
 </html>
+

@@ -1,176 +1,281 @@
-* {
-    margin: 0;
-    padding: 0;
-   }
-   .baner {
-    height: 700px;
-    position: relative;
-    overflow: hidden;
-    /* max-width: 100vw;
-    max-height: 100vh; */
-   }
- 
-   .baner__foto {
-    position: absolute;
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
-    width: 100%;
-    max-width: 1900px;
-    height: 100%;
-    opacity: 0;
-    animation: slider 15s infinite linear;
-   }
- 
-   .baner__foto:nth-child(2) {
-    animation-delay: 5s;
-   }
- 
-   .baner__foto:nth-child(3) {
-    animation-delay: 10s;
-   }
-   .baner__p {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50% - 50%);
-    font-size: 40px;
-    background-color: rgba(0, 0, 0, 0.6);
-    font-family: 'open sans', sans-serif;
-    color: white;
-    padding: 20px;
-    animation: txt 15s linear infinite both;
-    opacity: 0;
- 
-   }
- 
-   .baner__p:nth-of-type(1) {
-    top: 30%;
-    left: 65%;
-   }
- 
-   .baner__p:nth-of-type(2) {
-    top: 70%;
-    left: 15%;
-    animation-delay: 5s;
-   }
- 
-   .baner__p:nth-of-type(3) {
-    top: 30%;
-    left: 10%;
-    animation-delay: 10s;
-   }
- 
-   @keyframes txt {
-    0% {
-     opacity: 0;
-    }
- 
-    5% {
-     opacity: 0;
-    }
- 
-    10% {
-     opacity: 1;
-    }
- 
-    23.33% {
-     opacity: 1;
-    }
- 
-    28.33% {
-     opacity: 0;
-    }
- 
-    33.33% {
-     opacity: 0
-    }
- 
-    100% {
-     opacity: 0;
-    }
- 
- 
-   }
- 
-   @keyframes slider {
-    0% {
-     opacity: 0;
-    }
-    5% {
-     opacity: 1
-    }
-    33.33% {
-     opacity: 1
-    }
- 
-    38.33% {
-     opacity: 0;
-    }
- 
-    100% {
-     opacity: 0;
-    }
- }
- .main__baner {
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    top: 600px;
-    left: 0;
-    background-color: rgba(23,93,101,0.5);
-    color: white;
-    overflow: hidden;
-   }
-    .main__baner-span {
-       position: absolute;
-       top: 50%;
-       left:0;
-       transform: translate(0 -50%);
-       text-align: center;
-       width: 100%;
-       font-size: 20px;
-       text-transform: uppercase;
-       font-family: open sans, sans-serif;
-       animation: text 16s linear infinite both;
-       color: white;
-   }
-   .main__baner-span:nth-child(2)
-   {
-       animation-delay: 4s;
-   }
-   .main__baner-span:nth-child(3)
-   {
-       animation-delay: 8s;
-   }
-   .main__baner-span:nth-child(4)
-   {
-       animation-delay: 12s;
-   }
-   @keyframes text 
-   {
-       0%
-       {
-           transform: translate(100%, -50%);
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: > 1%,last 4 version
+*/
+
+.baner {
+        height: 700px;
+        position: relative;
+       /*  overflow: hidden; */
+        max-width: 1600px;
+        /*max-height: 100vh; */
+       
        }
-       6%
-       {
-           transform: translate(100%, -50%);
+     
+       .baner__foto {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        -webkit-animation: slider 15s infinite linear;
+                animation: slider 15s infinite linear;
        }
-       10%
-       {
-         transform: translate(0, -50%);
+     
+       .baner__foto:nth-child(2) {
+        -webkit-animation-delay: 5s;
+                animation-delay: 5s;
        }
-       30%
-       {
-         transform: translate(0, -50%);
+     
+       .baner__foto:nth-child(3) {
+        -webkit-animation-delay: 10s;
+                animation-delay: 10s;
        }
-       33%
-       {
-         transform: translate(-100%, -50%);
+       .baner__p {
+        position: absolute;
+        top: 50%;
+        left:50%;
+        -webkit-transform: translate(-50% - 50%);
+            -ms-transform: translate(-50% - 50%);
+                transform: translate(-50% - 50%);
+        font-size: 40px;
+        background-color: rgba(0, 0, 0, 0.6);
+        font-family: 'open sans', sans-serif;
+        color: white;
+        padding: 20px;
+        -webkit-animation: txt 15s linear infinite both;
+                animation: txt 15s linear infinite both;
+        opacity: 0;
+     
        }
-       100%  
-       {
-       transform: translate(-100%, -50%);
+     
+       .baner__p:nth-of-type(1) {
+        top: 30%;
+        left: 65%;
        }
-   }
+     
+       .baner__p:nth-of-type(2) {
+        top: 70%;
+        left: 15%;
+        -webkit-animation-delay: 5s;
+                animation-delay: 5s;
+       }
+     
+       .baner__p:nth-of-type(3) {
+        top: 30%;
+        left: 10%;
+        -webkit-animation-delay: 10s;
+                animation-delay: 10s;
+       }
+     
+       @-webkit-keyframes txt {
+        0% {
+         opacity: 0;
+        }
+     
+        5% {
+         opacity: 0;
+        }
+     
+        10% {
+         opacity: 1;
+        }
+     
+        23.33% {
+         opacity: 1;
+        }
+     
+        28.33% {
+         opacity: 0;
+        }
+     
+        33.33% {
+         opacity: 0
+        }
+     
+        100% {
+         opacity: 0;
+        }
+     
+     
+       }
+     
+       @keyframes txt {
+        0% {
+         opacity: 0;
+        }
+     
+        5% {
+         opacity: 0;
+        }
+     
+        10% {
+         opacity: 1;
+        }
+     
+        23.33% {
+         opacity: 1;
+        }
+     
+        28.33% {
+         opacity: 0;
+        }
+     
+        33.33% {
+         opacity: 0
+        }
+     
+        100% {
+         opacity: 0;
+        }
+     
+     
+       }
+     
+       @-webkit-keyframes slider {
+        0% {
+         opacity: 0;
+        }
+        5% {
+         opacity: 1
+        }
+        33.33% {
+         opacity: 1
+        }
+     
+        38.33% {
+         opacity: 0;
+        }
+     
+        100% {
+         opacity: 0;
+        }
+     }
+     
+       @keyframes slider {
+        0% {
+         opacity: 0;
+        }
+        5% {
+         opacity: 1
+        }
+        33.33% {
+         opacity: 1
+        }
+     
+        38.33% {
+         opacity: 0;
+        }
+     
+        100% {
+         opacity: 0;
+        }
+     }
+     .main__baner {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        top: 600px;
+        left: 0;
+        background-color: rgba(23,93,101,0.5);
+        color: white;
+        overflow: hidden;
+       }
+        .main__baner-span {
+           position: absolute;
+           top: 50%;
+           left:0;
+           -webkit-transform: translate(0 -50%);
+               -ms-transform: translate(0 -50%);
+                   transform: translate(0 -50%);
+           text-align: center;
+           width: 100%;
+           font-size: 20px;
+           text-transform: uppercase;
+           font-family: open sans, sans-serif;
+           -webkit-animation: text 16s linear infinite both;
+                   animation: text 16s linear infinite both;
+           color: white;
+       }
+       .main__baner-span:nth-child(2)
+       {
+           -webkit-animation-delay: 4s;
+                   animation-delay: 4s;
+       }
+       .main__baner-span:nth-child(3)
+       {
+           -webkit-animation-delay: 8s;
+                   animation-delay: 8s;
+       }
+       .main__baner-span:nth-child(4)
+       {
+           -webkit-animation-delay: 12s;
+                   animation-delay: 12s;
+       }
+       @-webkit-keyframes text 
+       {
+           0%
+           {
+               -webkit-transform: translate(100%, -50%);
+                       transform: translate(100%, -50%);
+           }
+           6%
+           {
+               -webkit-transform: translate(100%, -50%);
+                       transform: translate(100%, -50%);
+           }
+           10%
+           {
+             -webkit-transform: translate(0, -50%);
+                     transform: translate(0, -50%);
+           }
+           30%
+           {
+             -webkit-transform: translate(0, -50%);
+                     transform: translate(0, -50%);
+           }
+           33%
+           {
+             -webkit-transform: translate(-100%, -50%);
+                     transform: translate(-100%, -50%);
+           }
+           100%  
+           {
+           -webkit-transform: translate(-100%, -50%);
+                   transform: translate(-100%, -50%);
+           }
+       }
+       @keyframes text 
+       {
+           0%
+           {
+               -webkit-transform: translate(100%, -50%);
+                       transform: translate(100%, -50%);
+           }
+           6%
+           {
+               -webkit-transform: translate(100%, -50%);
+                       transform: translate(100%, -50%);
+           }
+           10%
+           {
+             -webkit-transform: translate(0, -50%);
+                     transform: translate(0, -50%);
+           }
+           30%
+           {
+             -webkit-transform: translate(0, -50%);
+                     transform: translate(0, -50%);
+           }
+           33%
+           {
+             -webkit-transform: translate(-100%, -50%);
+                     transform: translate(-100%, -50%);
+           }
+           100%  
+           {
+           -webkit-transform: translate(-100%, -50%);
+                   transform: translate(-100%, -50%);
+           }
+       }

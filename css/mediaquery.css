@@ -1,148 +1,197 @@
-@media (max-width: 2900px) {
+
+ @media (max-width: 1600px) {
     .head {    
-        font-size: 12px;
-        margin: 0px 10px 10px 180px;
-
-    }
-}
-@media (max-width: 1900px) {
- 
-        .head {    
-            font-size: 12px;  
-            margin: 0px 40px 10px 110px;       
-    }
-    
-} 
-@media (max-width: 1600px) {
-
-        .head {     
-            margin: 0 0 10px 10px 100px;       
-        }
+        margin-left: 60px;
+     }
+      
 }
 @media (max-width: 1440px) {
-
-        .head {    
-            margin: 0px 10px 10px 80px;   
-        }
-}
-@media (max-width: 1240px) {
-        .head {    
-            margin: 0px 10px 10px 40px;
-        }
-
-}
-@media (max-width: 1000px) {
-        .head {    
-            margin: 0px 10px 10px 20px;
-        }
-        .head__800px-off {
-            display: none;
-        }
-        .move_baner-descryption {
-            font-size: 14px;
-        }
-}
-@media (max-width: 800px) {
-
     .head {    
-        margin: 0px 10px 10px 10px;
-    }  
+        margin-left: 50px;
+     }
+      
+}
+/*----------------1280-----------*/
+@media (max-width: 1240px) {
+    .head {    
+       margin-left: 30px;
+    }
+
+}
+/*----------------1000-----------*/
+@media (max-width: 1000px) {
+   
     .btn {
-        padding: 10px 40px;
-    }  
-    .header__logo {
-        width: 110px;
-        margin-top: 10px;
-    } 
-    .head__title,
-    .header__time {
         font-size: 10px;
-    } 
-    .header__wrap {
-        margin-left: 10px;
+        padding: 8px 9px;
+        color: #f18e04;
+        text-transform: uppercase;
+        margin: 0px 2px 0px 15px;
     }
-    .move_baner-picture {
-        width: 200px; 
-    }
-    .move_baner {
-        height: 190px;
-    }
-    .move_baner-descryption {
-        font-size: 11px;
-    }
-    .nav {
-        width: 50%;
+    .head {
+        font-size: 10px;
+        margin-left: 20px;
     }
 }
-@media (max-width: 640px) {
-    
+/*----------------800-----------*/
+@media (max-width: 800px) {
+   
+    .btn {
+        font-size: 10px;
+        padding: 8px 9px;
+        color: #f18e04;
+        text-transform: uppercase;
+        margin: 0px 2px 0px 15px;
+    }
+    /* .move_baner {
+        width: 80%;
+    } */
+    /* .head__480px-off, */
+    .head__800px-off, 
     .head__640px {
         display: none;
     }
-    .btn {
-        padding: 10px 20px;
-    } 
-    .move_baner-picture {
-        width: 120px; 
+    .header__logo {
+        margin-top: 5px;
     }
-    .move_baner {
-        height: 150px;
-    } 
-    .move_baner-descryption {
-        font-size: 9px;
-        margin: 15px;
-    } 
-    .accesories__main-title {
-        font-size: 17px;
-    } 
-    .nav {
-        width: 70%;
-    }
+    .nav {      
+        width: 50vw;    
+      }
 }
-@media (max-width: 480px) {
+/*----------------700-----------*/
+@media (max-width: 700px)  {
+    
+    .nav {      
+        width: 100vw;
+        line-height: 0.3;    
+      }
+}
+/*----------------640-----------*/
+@media (max-width: 640px)  {
+    .head {
+        font-size: 30px;
+    }
+    .nav {      
+        width: 100vw; 
+        line-height: 0.5;  
+      }
+      .move_baner-picture {
+          width: 130px;
+      }  
+      .move_baner-descryption {
+          font-size: 15px;
+      }
+}
 
-    .head__480px-off {
+
+/*----------------480-----------*/
+@media (max-width: 480px) {
+    .head__480px-off,
+    .head__800px-off,
+    .head__640px {
+        display: none;
+    }   
+    
+     .baner__p {
+        padding: 10px;
+        font-size: 20px;
+       } 
+       .accesories__h2 {
+        font-size: 20px;
+       }
+     .accesories__description {
+        font-size: 18px;
+        width: 98%;
+        line-height: 1;
+     } 
+     .btn {
+        font-size: 10px;
+        padding: 8px 9px;
+        color: #f18e04;
+        text-transform: uppercase;
+        margin: 0px 2px 0px 15px;
+    }
+     .move_baner { 
+        height: 280px;
+        line-height: 1;
+        width: 100%;
+     }
+     
+     .move_baner-descryption {
+         text-align: justify;
+         width: 85%;
+     }
+     .move_baner-picture {
+         width: 140px;
+     }   
+    .nav {      
+        width: 100vw;     
+      }
+    .nav .menu-nav__link {
+        font-size: 18px;
+        line-height: 1;
+    }
+    .footer__menu a{
+        margin: 10px;
+   }
+}
+/*----------------320-----------*/
+ @media (max-width: 320px) {
+     
+    .btn {
+        font-size: 10px;
+        padding: 13px;
+        color: #f18e04;
+        text-transform: uppercase; 
+        margin-bottom: 2px ;       
+    }
+    .head__800px-off,
+    .head__480px-off,
+    .head__640px 
+    {
         display: none;
     } 
-    .btn {
-        margin: 20px 0 0;
-        padding: 10px 8px;
+    .header__logo {
+        margin-left: 3px;
     }
-    .move_baner-picture {
-        width: 96px; 
-    }
-    .move_baner-descryption {
-        font-size: 9px;
-        margin: 10px;
-    } 
-    .move_baner {
-        height: 150px;
-    } 
-    .move_baner-title {
+    .baner__p {
+        padding: 9px;
         font-size: 15px;
-    }
-    .accesories__description {
-        font-size: 12px;   
-    } 
-    .accesories__h2 {       
-        font-size: 20px;      
-    }
-    .accesories__main-title {
-        font-size: 15px;
-        padding: 17px 0;
-    } 
-    .nav {
+       } 
+   .move_baner { 
+        height: 370px;
+        line-height: 1;
         width: 100%;
     }
-}
-
-
-
-
-@media (max-width: 320px) {
-
-        
-        .head {
-            color: chartreuse;
-        }
-}
+    .accesories__h2 {
+        font-size: 20px;
+    }
+    .accesories__title {
+        height: 400px;
+    }
+    .move_baner-descryption {
+        text-align: justify;
+        width: 90%;
+    }
+    .move_baner-picture {
+         width: 140px;
+    }
+    .nav {      
+        width: 100vw;
+        opacity: 0.9;      
+    }
+    .nav .menu-nav__link {
+        font-size: 18px;
+        line-height: 0.5;
+    }
+    
+   .footer__menu a{
+        margin: 2px;
+   }
+   .about__us__title-second {
+       margin-top: 100px;
+   }
+   .about__us-title-off {
+       display: none;
+   }
+} 
