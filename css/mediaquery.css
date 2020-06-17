@@ -100,9 +100,9 @@
         font-size: 20px;
        }
      .accesories__description {
-        font-size: 18px;
+        font-size: 15px;
         width: 98%;
-        line-height: 1;
+        line-height: 1.1;
      } 
      .btn {
         font-size: 10px;
@@ -116,7 +116,12 @@
         line-height: 1;
         width: 100%;
      }
-     
+     .baner {
+        height: 440px;
+    }  
+    .main__baner {
+        top: 380px;
+    }
      .move_baner-descryption {
          text-align: justify;
          width: 85%;
@@ -131,6 +136,7 @@
         font-size: 18px;
         line-height: 1;
     }
+    
     .footer__menu a{
         margin: 10px;
    }
@@ -154,6 +160,9 @@
     .header__logo {
         margin-left: 3px;
     }
+    .baner {
+        height: 320px;
+    }    
     .baner__p {
         padding: 9px;
         font-size: 15px;
@@ -172,6 +181,7 @@
     .move_baner-descryption {
         text-align: justify;
         width: 90%;
+       
     }
     .move_baner-picture {
          width: 140px;
@@ -194,4 +204,11 @@
    .about__us-title-off {
        display: none;
    }
+   .accesories {
+    position: relative;
+    height: 1970px;
+   }
+.accesories__description {
+    font-size: 19px;
+    }
 } 

@@ -128,40 +128,35 @@
     <section class="about__us">
 
             <div class="about__us-title about__us-title-off">  
-                <h3 class="about__us__title">Żaluzje panelowe</h3>
-            </div>  
-                
-        <article class="about__wrap"> 
-
-               
-            <h4 class="about__us__title-second">„Żaluzje panelowe”<h4>
-
-            <p class="about__us__description">Znudziły Ci się firanki i zasłony w oknach balkonowych lub przy wyjściu na patio? Marzysz o praktyczniejszym i zarazem eleganckim rozwiązaniu, dzięki któremu Twoje wnętrze zyska na nowoczesności i będzie bardziej funkcjonalne? Proponujemy Ci rewelacyjne żaluzje panelowe w wielu ciekawych wzorach.</p>
-
-            <h4 class="about__us__title-second">„Nowoczesne i modne rozwiązania”</h4> 
-
-            <p class="about__us__description">Żaluzje panelowe to nie tylko możliwość rezygnacji z problematycznych firanek, które gromadzą kurz i wymagają częstego prania. To również możliwości tworzenia stylizacji wnętrza poprzez wybór odpowiedniego wzoru i rodzaju wypełnienia. Płaskie panele o lekko napiętej powierzchni zawsze pozostają idealne gładkie, gwarantując niezmienność i wysoki poziom elegancji.</p>
-
-            <h4 class="about__us__title-second">„Trzy systemy żaluzji panelowych”</h4> 
-
-            <p class="about__us__description">Jako profesjonalna firma działamy na terenie miasta Piaseczno, specjalizując się w sprzedaży i montażu różnych systemów zasłaniania okien, wśród których żaluzje panelowe należą do najpiękniejszych i najnowocześniejszych.</p>
-
-            <p class="about__us__description">Proponujemy Ci jeden z trzech systemów do wyboru:</p>
+                <h3 class="about__us__title">Kontakt</h3>
+            </div>               
+                       
+        <article class="about__wrap kontakt__wrap">  
         
-            <ul class="about__us__description-regulamin">
-                <li class="about__us__description">System Standard,</li>
-                <li class="about__us__description">Ultimate Track Panel,</li>
-                <li class="about__us__description">System typu A/B/C/D/E/F/G.</li>  
-            </ul>
-
-            <p class="about__us__description">Wszystkie trzy systemy posiadają opcję sterowania ręcznego i elektrycznego, którym możesz dopasować do swoich potrzeb.</p>    
-                
-            <h4 class="about__us__title-second">„Rozmaite kolory i wypełnienia”</h4> 
+        <p class="about__us__description">Napisz do nas wiadomość</p>   
+        
+        <form method="post" name="contaktform" action="mail.php">
             
-            <p class="about__us__description">Każdy z systemów żaluzji panelowych posiada swoją specyfikę decydującą o jego wyglądzie i dekoracyjności. Najbardziej wyróżniający się jest system Ultimate Track Panel określony jako ekskluzywny. Jako jedyny wykonany jest w kolorze satynowym, a jego wypełnienie może stanowić tkanina tradycyjna lub Laser Cut, woven paper, strings. Podobne materiały wykorzystywane są w systemie Standard, dostępnym w kolorze białym i szarym. Trzeci, najprostszy system wykonywany jest wyłącznie z tkaniny roletowej.</p> 
+            <div class="field half first">
+                <label for="name">Imię</label>
+                <input class="form__item" type="text" placeholder="Proszę podać imię" id="name" name="name">
+            </div>
 
-            <p class="about__us__description">Wybierz swój własny system żaluzji panelowych i skontaktuj się z nami, a dopracujemy szczegóły!</p> 
-            
+            <div class="field half">
+                <label for="nazwisko">Nazwisko</label>
+                <input class="form__item" type="text" placeholder="Proszę podać imię" id="nazwisko" name="nazwisko">
+            </div>
+
+            <div class="field">
+                <label for="massage">wiadomość</label>
+                <textarea name="message" id="message" rows="4"></textarea>
+            </div>
+
+            <div class="actions">
+                <input type="submit" name="submit" value="Send" class="special"/>
+            </div>
+
+        </form>    
         </article>      
     </section>
     
