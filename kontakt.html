@@ -37,7 +37,7 @@
             <div class="head head__btn">
               
                 <div class="head__button">
-                    <button class="btn">napisz do nas</button>
+                    <a href="kontakt.html"><button class="btn">napisz do nas</button></a>
                 <div>     
             </div>
             
@@ -139,21 +139,22 @@
             
             <div class="field half first">
                 <label for="name">Imię</label>
-                <input class="form__item" type="text" placeholder="Proszę podać imię" id="name" name="name">
+                <input class="form__item" type="text" placeholder="Proszę podać imię" id="name" name="name" required>
             </div>
 
             <div class="field half">
-                <label for="nazwisko">Nazwisko</label>
-                <input class="form__item" type="text" placeholder="Proszę podać imię" id="nazwisko" name="nazwisko">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" required>
             </div>
 
             <div class="field">
                 <label for="massage">wiadomość</label>
-                <textarea name="message" id="message" rows="4"></textarea>
+                <textarea name="message" id="message" rows="4" required></textarea>
             </div>
 
             <div class="actions">
-                <input type="submit" name="submit" value="Send" class="special"/>
+                <li><input type="submit" name="submit" value="Send" class="special"/></li>
+                <li><input type="reset" value="Reset"></li>
             </div>
 
         </form>    
