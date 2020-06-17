@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://prywatnosc.interia.pl/rodo-iframe#origin=https%3A%2F%2Fpoczta.interia.pl -->
+<html lang="pl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title></head><body>
+    <script>
+        var state_accepted = '1',
+            state_accept_int = '2',
+            state_accept_other = '3',
+            state_block = '4',
+            state_later = '5',
+            state_accept_int_other = '6',
+            state_accept_prof = '7',
+            state_accept_prof_int = '8',
+            state_accept_prof_other = '9';
+
+        var toKibana = function (str, data) {
+            try {
+                fetch('//l.iplsc.com/logger/', {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "text/plain"
+                    },
+                    body: JSON.stringify({
+                        level: 'error',
+                        line: 0,
+                        origin: 'iplv3',
+                        referer: location.href,
+                        method: 'console_log',
+                        message: 'rdebug4 iframe ' + str,
+                        data: data
+                    })
+                });
+            } catch (e) {}
+        };
+        /**
+         * Odczytanie globalnych ustawien rodo
+         * Do kwietnia 2020 bylo 'rodoStatus' ponowna zgoda wymagalo nowego ciastka 'rodo'
+         * @return {null|{rodo:{v: string, d: number}, iab: string}}
+         */
+        var read = function () {
+            var data = null;
+
+            try {
+                data = localStorage.getItem('rodo');
+                if (!data) {
+                    return null;
+                }
+                data = JSON.parse(data);
+                window.console && console.log('Iframe: read', data);
+            } catch (e) {
+                window.console && console.log('Iframe: Problem z odczytem', e);
+                data = null;
+            }
+            return data;
+        };
+        /**
+         * Zapisanie globalnych ustawien rodo
+         * @param {{v: string, d: number, iab: string}} value - zgoda z czasem
+         */
+        var write = function (value) {
+            try {
+                if (value.v) {
+                    localStorage.setItem('rodo', JSON.stringify(value));
+                    localStorage.removeItem('rodoStatus');  // usuwamy stary wpis
+                } else {
+                    window.console && console.log('Iframe: niepoprawny format danych do zapisania', value);
+                }
+            } catch (e) {
+                window.console && console.log('Iframe: Problem z zapisem', e, name, value);
+                return null;
+            }
+        };
+
+        // jesli jest hash to pobieramy z hash a jak nie to po staremu
+        var originUrl = decodeURIComponent(location.hash ? location.hash.split('origin=')[1] : location.search.split('origin=')[1]),
+            host = originUrl.replace(/https?\:\/\//, ''),
+            // format komunikatu wysylanego do inpl.rd, dzieki temu odsiejemy spam
+            agreement = {
+                command: 'get-rodo-data',
+                data: read()
+            };
+
+        // wysylam do origina przeczytane dane. Zabezpieczam przed wyslaniem do siebie
+        if (top !== window) {
+            //jesli promocyjni to wysylam do parenta
+            var targetWindow = /polska-press.gazetkapromocyjna.pl/i.test(originUrl) ? window.parent : top;
+
+            window.console && console.log('Iframe: wysyłam ', agreement, 'do', originUrl);
+            // wysylam zawsze w nowym formacie bo po konwersji
+            targetWindow.postMessage(JSON.stringify(agreement), originUrl);
+        }
+
+        // nasluchujemy zeby zapisac globalnych danych
+        window.addEventListener("message", function (ev) {
+            /** zapisana wartosc: do debugu */
+            var global;
+
+            try {
+                /**
+                 * @type {{command: 'save', value: {v: string, d: number}}|{command: 'save-rodo-data', data: {v:string, d:number, iab: string}} obj
+                 */
+                var obj =  JSON.parse(ev.data);
+
+                global = read();
+
+                // stary format, do usuniecia niedlugo
+                if (obj.command && obj.command === 'save' && obj.value) {
+                    toKibana('stary format', JSON.stringify(obj.value));
+                    // Zapisujemy jako global
+                    console.log('Iframe: aktualizacja zgody', obj.value, global);
+                    // dostajemy stary format, zapisujemy po nowemu
+                    write({v: obj.value.v, d: obj.value.d, iab: ''});
+                    console.log('Iframe: zapisane dane', obj.value);
+                }
+                // nowy format komunikatow
+                if (obj.command === 'save-rodo-data' && obj.data) {
+                    write(obj.data);
+                    console.log('Iframe: zapisane dane', obj.data);
+                }
+            } catch (e) {
+                console.log('Iframe: błąd onMessage: ',e , ev.data);
+            }
+        }, false);
+    </script>
+</body></html>

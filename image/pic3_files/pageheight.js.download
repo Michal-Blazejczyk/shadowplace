@@ -1,0 +1,42 @@
+/**
+ * Created by tomasz.dudek@firma.interia.pl 18.04.14.
+ */
+(function(){
+
+    var plugin = function(){
+
+        var tracker = null;
+        var config  = null;
+        var pageheight;
+
+        this.init = function(tr,conf)
+        {
+            tracker = tr;
+            config  = conf;
+
+            var setPageHeight = function(){
+                try{
+                    pageheight =  Math.max(
+                        document.body.scrollHeight || 0,
+                        document.documentElement.scrollHeight || 0,
+                        document.body.offsetHeight || 0,
+                        document.documentElement.offsetHeight || 0,
+                        document.body.clientHeight || 0,
+                        document.documentElement.clientHeight || 0
+                    );
+                }catch(e){
+
+                }
+            };
+            tracker.onDocumentReady(setPageHeight);
+        }
+
+        this.unload = function(deferred)
+        {
+            deferred.getTracker().setCustomVar(config.pageHeightVar,pageheight);
+            deferred.resolve();
+        }
+    }
+    iwa('plugin','load','pageheight',new plugin());
+
+})();

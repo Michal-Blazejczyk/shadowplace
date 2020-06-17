@@ -1,0 +1,115 @@
+(function(){
+
+    var plugin = function(){
+
+        var cfg,
+            tracker,
+            api;
+
+        var unloadEvent,
+            redirect,
+            domainLookup,
+            connect,
+            request,
+            response,
+            parse,
+            domContentLoaded,
+            domContentLoadedEvent,
+            pageload,
+            loadEvent,
+            navigationStart,
+            fetchStart;
+
+        var measured = false;
+
+        var getApi = function(){
+            if(typeof window.performance !== 'undefined' &&
+                typeof window.performance.timing !== 'undefined')
+            {
+                return window.performance.timing;
+            }
+            return false;
+
+        }
+
+        var measure = function(){
+            if(api)
+            {
+                unloadEvent      = api.unloadEventEnd - api.unloadEventStart;
+                redirect         = api.redirectEnd - api.redirectStart;
+                domainLookup     = api.domainLookupEnd - api.domainLookupStart;
+                connect          = api.connectEnd - api.connectStart;
+                request          = api.responseEnd - api.requestStart;
+                response         = api.responseEnd - api.responseStart;
+                parse            = api.domInteractive - api.domLoading;
+                domContentLoaded = api.domContentLoadedEventStart - api.navigationStart;
+                pageload         = api.domComplete - api.navigationStart;
+                navigationStart  = api.navigationStart;
+                fetchStart       = api.fetchStart;
+                measured         = true;
+            }
+        }
+
+        /* start-test-code */
+        window['IWA_PLUGIN_PERFORMANCE.measure'] = measure;
+        /* end-test-code */
+
+
+
+        this.init = function(tr)
+        {
+            tracker = tr;
+            cfg     = {
+                unloadEvent             : 'p_unload_evt',
+                redirect                : 'p_redirect',
+                domainLookup            : 'p_domain_lookup',
+                connect                 : 'p_connect',
+                request                 : 'p_request',
+                response                : 'p_response',
+                parse                   : 'p_parse',
+                domContentLoaded        : 'p_dom_cnt_load',
+                domContentLoadedEvent   : 'p_dom_cnt_load_evt',
+                pageload                : 'p_load',
+                pageloadEvent           : 'p_load_evt'
+            };
+            api     = getApi();
+
+
+            tracker.addEvent(window,'load',measure);
+        }
+
+        this.unload = function(deferred){
+
+            if(measured && api)
+            {
+
+                //set custom variables
+                var tracker = deferred.getTracker();
+                tracker.setCustomVar(cfg.unloadEvent,unloadEvent);
+                tracker.setCustomVar(cfg.redirect,redirect);
+                tracker.setCustomVar(cfg.domainLookup,domainLookup);
+                tracker.setCustomVar(cfg.connect,connect);
+                tracker.setCustomVar(cfg.request,request);
+                tracker.setCustomVar(cfg.response,response);
+                tracker.setCustomVar(cfg.parse,parse);
+                tracker.setCustomVar(cfg.domContentLoadedEvent,(api.domContentLoadedEventEnd - api.domContentLoadedEventStart));
+                if(navigationStart > 0){
+                    tracker.setCustomVar(cfg.domContentLoaded,domContentLoaded);
+                    tracker.setCustomVar(cfg.pageload,pageload);
+                }
+
+                tracker.setCustomVar(cfg.pageloadEvent,(api.loadEventEnd - api.loadEventStart));
+                tracker.setCustomVar('p_nav_start',navigationStart);
+                tracker.setCustomVar('p_fetch_start',fetchStart);
+
+            }
+            deferred.resolve();
+        }
+
+
+
+    }
+
+    iwa('plugin','load','performance',new plugin());
+
+})();

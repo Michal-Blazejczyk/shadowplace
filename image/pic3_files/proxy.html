@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)https://js.iplsc.com/inpl.abd/latest/proxy.html?host=https%3A%2F%2Fpoczta.interia.pl&t=1592425204610 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Proxy</title>
+</head>
+<body>
+    <script>
+        /**
+         * Helpers
+         */
+        var helpers = {
+            isDefined: function(value) {
+                return typeof value !== 'undefined';
+            },
+            isFunction: function(value) {
+                return typeof value === 'function';
+            },
+            isObject: function(value) {
+                return (this.isDefined(value) && Object.prototype.toString.call(value) === '[object Object]');
+            },
+            isArray: function(value) {
+                return Object.prototype.toString.call(value) === '[object Array]';
+            },
+            loadOnDomReady: function (c){
+                var DOMContentLoaded = false;
+                var d = document;
+                var w = window;
+
+                function r() {
+                    if((d.readyState === 'complete') && !DOMContentLoaded) {
+                        DOMContentLoaded=true;
+                        c();
+                    }
+                }
+
+                r();
+
+                if(!DOMContentLoaded) {
+                    if (d.addEventListener) {
+                        d.addEventListener('DOMContentLoaded',function() {
+                            DOMContentLoaded = true;
+                            c();
+                        }, false);
+
+                        w.addEventListener('load', function() {
+                            if(!DOMContentLoaded) {
+                                c();
+                            }
+                        }, false);
+                    } else if (d.attachEvent){
+                        d.attachEvent('onreadystatechange', r);
+                    }
+                }
+            }
+        };
+
+        /**
+         * Get query param
+         * @constructor
+         */
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split('&');
+
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+
+                if (decodeURIComponent(pair[0]) == variable) {
+                    return decodeURIComponent(pair[1]);
+                }
+            }
+        }
+
+        /**
+         * Container bait
+         * @constructor
+         */
+        function ContainerBait() {
+            try {
+                var bait = ['pub_300x250', 'pub_300x250m', 'pub_728x90', 'text-ad', 'textAd', 'text_ad', 'text_ads', 'text-ads', 'text-ad-links'];
+                var container = document.createElement('div');
+
+                container.setAttribute('class', bait.join(' '));
+
+                container.style.width = '10px';
+                container.style.height = '10px';
+                container.style.position = 'absolute';
+                container.style.top = '-999999px';
+                container.style.left = '-999999px';
+
+                helpers.loadOnDomReady(function() {
+                    document.body.appendChild(container);
+
+                    setTimeout(function () {
+                        if (container.style.visibility === 'hidden' || container.style.display === 'none' || container.offsetWidth !== 10) {
+                            this.detected = 1;
+                            this.trigger('detected', [1]);
+                        } else {
+                            this.detected = 0;
+                            this.trigger('notDetected', [0]);
+                        }
+
+                        this.trigger('done', [this.detected]);
+                    }.bind(this), 10);
+                }.bind(this));
+            } catch(err) {
+                console.log(err)
+                setTimeout(function() {
+                    this.detected = -1;
+                    this.trigger('done', [this.detected]);
+                    this.trigger('detectFail', [this.detected]);
+                }.bind(this));
+            }
+        }
+
+        ContainerBait.prototype = new EventEmitter();
+        ContainerBait.prototype.constructor = ContainerBait;
+
+        /**
+         * Event emitter
+         * @constructor
+         */
+        function EventEmitter() {
+            var queue = {};
+
+            this.trigger = function(event, args) {
+                if (helpers.isArray(queue[event])) {
+                    queue[event].forEach(function(callback) {
+                        callback.apply(this, args);
+                    }.bind(this));
+                }
+
+                queue[event] = [];
+            };
+
+            this.on = function(event, callback) {
+                queue[event] = queue[event] || [];
+                queue[event].push(callback);
+            };
+        }
+
+        var containerBait = new ContainerBait();
+
+        containerBait.on('done', function(detected) {
+            window.parent.postMessage({ detected: detected}, getQueryVariable('host'));
+        });
+    </script>
+
+<div class="pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links" style="width: 10px; height: 10px; position: absolute; top: -999999px; left: -999999px;"></div></body></html>

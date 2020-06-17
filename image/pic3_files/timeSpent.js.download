@@ -1,0 +1,112 @@
+/**
+ * Plugin mierzacy czas przebywania użytkownika na stronie
+ * @autor tomasz.dudek@firma.interia.pl
+ */
+(function(){
+
+    var plugin = function(){
+
+        var MEASURING = 'measurement',
+            STOPPED   = 'stoped';
+
+        var tracker        = null,
+            config         = null,
+            doc            = null,
+            date           = null,
+            state          = STOPPED,
+            startTimestamp = 0,
+            timeSpent      = 0;
+
+        var hidden, visibilityChange;
+        var isVisibilityApiSupported = false;
+
+
+
+        this.init = function(tr,conf)
+        {
+            tracker = tr;
+            config  = conf;
+            doc     = conf.document || document;
+            date    = conf.date     || Date;
+
+            if (typeof doc.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support
+                hidden = "hidden";
+                visibilityChange = "visibilitychange";
+            } else if (typeof doc.mozHidden !== "undefined") {
+                hidden = "mozHidden";
+                visibilityChange = "mozvisibilitychange";
+            } else if (typeof doc.msHidden !== "undefined") {
+                hidden = "msHidden";
+                visibilityChange = "msvisibilitychange";
+            } else if (typeof doc.webkitHidden !== "undefined") {
+                hidden = "webkitHidden";
+                visibilityChange = "webkitvisibilitychange";
+            };
+
+            isVisibilityApiSupported = Number( typeof doc.addEventListener != 'undefined' && typeof doc[hidden] != 'undefined'  );
+
+            if( isVisible() ){
+                startMeasure();
+            };
+
+            if( typeof doc.addEventListener != 'undefined' ) {
+                doc.addEventListener(visibilityChange,function(){
+                    if(!doc[hidden]){
+                        startMeasure();
+                    }else{
+                        stopMeasure();
+                    }
+
+                })
+            };
+
+        };
+
+        this.unload = function(deferred)
+        {
+            try{
+                stopMeasure()
+            }catch(e){};
+
+            var tracker = deferred.getTracker();
+            tracker.setCustomVar('timeSpent',timeSpent);
+            tracker.setCustomVar('visApi',isVisibilityApiSupported);
+            deferred.resolve();
+        };
+
+        var getTime = function(){
+            return (new date()).getTime();
+        };
+
+
+
+        var isVisible = function(){
+
+            if( isVisibilityApiSupported ){
+                return !document[hidden];
+            }else {
+                return true;
+            }
+        };
+
+        var startMeasure = function(){
+
+            if( state == STOPPED ) {
+                state = MEASURING;
+                startTimestamp = getTime();
+            }
+
+        };
+
+        var stopMeasure = function(){
+            if( state == MEASURING ) {
+                state = STOPPED;
+                timeSpent  += parseInt( ( ( getTime() ) - startTimestamp ) / 1000);//zmieniam na sekundy
+            }
+
+        };
+    };
+
+    iwa('plugin','load','timeSpent',new plugin());
+
+})();

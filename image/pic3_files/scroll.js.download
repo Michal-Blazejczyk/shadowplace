@@ -1,0 +1,127 @@
+/**
+ * Created by tomasz.dudek@firma.interia.pl on 18.04.14.
+ */
+
+(function() {
+    function Plugin() {
+        var tracker = null;
+        var config = null;
+        var scrollEndDelayID = null;
+        var scrolls = {};
+
+        function appendEvents() {
+            Object.keys(config).forEach(function(key) {
+                var selector = config[key];
+                var eventName = key;
+                var element;
+
+                if (['html', 'body'].includes(String(selector).toLowerCase()) || eventName === 'scrollToVar') {
+                    element = window;
+                }
+
+                if (eventName === 'scrollToVar') {
+                    eventName = 'scroll';
+                }
+                scrolls[eventName] = 0;
+                scrolls[eventName + '_max'] = 0;
+                scrolls[eventName + '_current'] = 0;
+
+                element = element === window ? element : document.querySelector(selector);
+
+                if (element) {
+                    onScrollEnd(element, eventName, function(element, eventName) {
+                        scrolls[eventName + '_current'] = getScroll(element);
+                        scrolls[eventName] = getScrollPercent(element);
+                        if (scrolls[eventName + '_max'] < scrolls[eventName + '_current']) {
+                            scrolls[eventName + '_max'] = scrolls[eventName + '_current'];
+                        }
+                    }.bind(this));
+                }
+            });
+        }
+
+        function onScrollEnd(element, eventName, callback) {
+            element.addEventListener('scroll', function() {
+                clearTimeout(scrollEndDelayID);
+
+                scrollEndDelayID = setTimeout(callback.bind(this, element, eventName), 150);
+            }.bind(this));
+        }
+
+        function getScroll(element) {
+            var scrollTop = element === window ? element.scrollY : element.scrollTop;
+
+            return Math.round(scrollTop);
+        }
+        function getScrollPercent(element) {
+            var winHeight = getWindowHeight();
+            var docHeight = getDocHeight();
+            var scrollTop =  getScroll(element);
+            var scrollPercent = 0;
+            if(scrollTop+winHeight > docHeight)
+                return ;
+
+            if(winHeight > docHeight)
+            {
+                scrollPercent = 100;
+                return scrollPercent;
+            }
+
+
+            var percent = parseInt( ((winHeight + scrollTop)/docHeight)*100 );
+            if(percent > scrollPercent || (scrollPercent > 100 && percent <=100 )) {
+                scrollPercent = percent;
+            }
+            return scrollPercent;
+
+        }
+        function getWindowHeight() {
+                return window.innerHeight ||
+                    document.documentElement.clientHeight ||
+                    document.body.clientHeight || 0;
+        }
+        function getDocHeight() {
+
+            return Math.max(
+                document.body.scrollHeight || 0,
+                document.documentElement.scrollHeight || 0,
+                document.body.offsetHeight || 0,
+                document.documentElement.offsetHeight || 0,
+                document.body.clientHeight || 0,
+                document.documentElement.clientHeight || 0
+            );
+        }
+       function getWindowYscroll() {
+            return window.pageYOffset ||
+                document.body.scrollTop ||
+                document.documentElement.scrollTop || 0;
+        }
+
+
+
+        this.init = function(tr, conf) {
+            config = conf;
+            tracker = tr;
+
+            if (document.readyState === 'complete' || document.readyState === 'loaded') {
+                appendEvents();
+            } else {
+                window.addEventListener('load', function() {
+                    appendEvents();
+                });
+            }
+        };
+
+        this.unload = function(deferred) {
+            Object.keys(scrolls).forEach(function(key) {
+                var value = scrolls[key];
+
+                deferred.getTracker().setCustomVar(key, value);
+            });
+
+            deferred.resolve();
+        };
+    }
+
+    iwa('plugin', 'load', 'scroll', new Plugin());
+})();
