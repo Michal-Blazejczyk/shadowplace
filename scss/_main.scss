@@ -1,0 +1,211 @@
+/*przyklejone*/
+.accesories {
+    position: relative;
+    height: 1270px;
+    &__title {
+        height: 253px;
+        background-image: url("picture.jpg");
+        background-repeat: repeat;
+        /* background-position: center bottom; */
+        /*      background-position: 50% 100%;*/
+        background-attachment: fixed;
+        /* position: relative; */
+        /* background-size: cover; */
+        background-position: center;
+    }
+    &__main-title {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        padding: 20px 0;
+        text-transform:uppercase;
+        font-family: 'Open Sans', sans-serif; 
+    }
+    &__h2 {
+        background-color:var(--bg-color-main-html); 
+        width: 95%;
+        text-transform: uppercase;
+        font-size: 25px;
+        padding: 5px;
+        color: black;
+        text-align: center;
+        margin: auto;
+        font-family: 'Roboto', sans-serif; 
+    }
+    &__description {
+        width: 90%; 
+        margin: 40px auto;
+        color: black;
+        z-index: 4;
+        background-color:var(--bg-color-main-html);
+        text-align: center;  
+        font-size: 17px;
+        line-height: 1.2; 
+        font-weight: 400; 
+        padding: 5px;
+        font-family: 'Open Sans', sans-serif;
+        
+    }
+}
+.aboutFirst article {
+       
+    margin-bottom: 30px;
+    -webkit-transition: .8s;
+    -o-transition: .8s;
+    transition: .8s;
+   } 
+.about article {
+       
+    margin-bottom: 30px;
+    -webkit-transition: .8s;
+    -o-transition: .8s;
+    transition: .8s;
+   } 
+      /*SEKCJA ABOUT*/
+     
+.aboutFirst .art2,
+.aboutFirst .art3,
+.aboutFirst .art4
+    {
+        transform: translateX(-100vw);
+    }
+      
+.aboutFirst .art2.active,
+.aboutFirst .art4.active,
+.aboutFirst .art3.active
+    {
+        transform: translateX(0);
+    }
+    .about article
+    {
+        transform: scale(0);
+    }
+    .about article.active
+    {
+        transform: scale(1);
+    }
+.panel {
+            
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    }
+    section>.pannel__box {
+        flex-basis: 21%;
+    }
+    section .pannel__box img {
+        width: 100%;
+                
+    }  
+    .color_link {
+        color: var(--primary-color);
+        text-decoration: none;
+    } 
+    .color_link:hover {
+        color: var(--secendary-color);
+    } 
+
+    .panel-widget-style {
+        margin-bottom: 20px;
+        
+    }
+
+.kontakt__wrap {
+    display: flex;
+    max-width: 900px;
+    margin-left: 180px;
+}
+.kontakt__title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} 
+
+.kontakt__form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.kontakt__box {
+    padding: 30px ;
+    margin:auto;
+    background-color: rgb(218,239,239);
+    text-align: center;
+}
+.actions {
+    text-align: center;
+    margin-top: 10px;
+}
+label {
+    display: block;  
+}
+.header__icon-kontakt {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+.special {
+    padding: 5px 50px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+@media (max-width: 800px) {
+    .kontakt__wrap {   
+    margin-left: 30px;
+    }    
+}  
+@media (max-width: 420px) {
+    .kontakt__wrap {
+        flex-direction: column;     
+    } 
+    .special {
+        margin-bottom: 20px;
+    }
+    .kontakt__wrap.xxx {
+        margin-left: 35px;
+    } 
+}  
+
+
+
+
+
+    @media (max-width: 1200px) {
+        section>.pannel__box
+    {
+        flex-basis: 50%;
+        padding: 50px;
+    }
+    }
+    @media (max-width: 1024px) {
+        section>.pannel__box
+    {
+        flex-basis: 50%;
+        padding: 30px;
+    }
+    }
+    @media (max-width: 640px) {
+        section>.pannel__box
+    {
+        flex-basis: 50%;
+        padding: 15px;
+    }
+    }
+    @media (max-width: 460px) {
+        section>.pannel__box
+    {
+        flex-basis: 100%;
+               
+    }
+    }    

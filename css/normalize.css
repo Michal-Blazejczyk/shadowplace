@@ -6,7 +6,7 @@ Issues
 Marketplace
 Explore
  
-@Michal-Blazejczyk 
+
 necolas
 /
 normalize.css
@@ -36,7 +36,7 @@ fc091cc on Nov 5, 2018
 
 html {
   line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust 100%; /* 2 */
 }
 
 /* Sections

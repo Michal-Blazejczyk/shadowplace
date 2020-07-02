@@ -1,0 +1,221 @@
+@media (max-width: 2900px) {
+    .header__li {
+        margin-right: 120px;
+    }
+}
+      
+ 
+ @media (max-width: 2000px) {
+    .header__li {
+        margin-right: 100px;
+    }
+    }
+      
+@media (max-width: 1440px) {
+    .header__li {
+        margin-right: 80px;
+    }
+}
+      
+/*----------------1280-----------*/
+@media (max-width: 1240px) {
+    
+.header__li {
+    margin-right: 40px;
+}
+}
+/*----------------1000-----------*/
+@media (max-width: 1000px) {
+   
+    .btn {        
+        margin-top: 5px;
+        color: var(--primary-color); 
+        padding: 10px 15px;        
+    }
+    
+    .header {
+        font-size: 10px;
+        
+    }
+    .footer__menu a {
+        margin: 40px;
+    }
+}
+/*----------------800-----------*/
+@media (max-width: 800px) {
+   
+    .btn {             
+       color: var(--primary-color);
+       padding: 10px;       
+    }
+    .header__li {
+        margin-right: 30px;
+    }
+    .header__time {
+        font-size: 12px;
+    }
+    .header__title {
+        font-size: 12px;
+    }
+    .footer__menu a {
+        margin: 30px;
+    }
+} 
+/*----------------700-----------*/
+@media (max-width: 700px)  {
+    
+    .nav {      
+        width: 100vw;
+        line-height: 0.3;    
+      }
+      .header__hours-off {
+        display: none;
+    }   
+}
+/*----------------640-----------*/
+@media (max-width: 640px)  {
+    .header {
+        font-size:7px;
+    }  
+    .header__li {
+        margin-right: 10px;
+    }
+    .btn {        
+        padding: 10px;        
+    }
+    .header__logo {
+        width: 100px;
+    }
+    .nav {      
+        width: 100vw; 
+        line-height: 0.5;  
+      }
+      .move_baner-picture {
+          width: 130px;
+      }  
+      .baner__p {
+        padding: 20px;
+        font-size: 20px;
+       } 
+      .move_baner-description {
+          font-size: 15px;
+      }
+      .accesories__description {
+        font-size: 14px;
+     } 
+     .footer__menu a {
+        margin: 10px;
+    }
+}
+
+
+/*----------------480-----------*/
+@media (max-width: 480px) {
+    
+    
+     .baner__p {
+        padding: 20px;
+        font-size: 20px;
+       } 
+       .accesories__h2 {
+        font-size: 20px;
+       }
+     .accesories__description {
+        font-size: 13px;
+        width: 98%;
+        line-height: 1.1;
+
+     } 
+     .header_help-off,
+     .header__email-off {
+        display: none;
+    }
+    .btn {
+        color: var(--primary-color);
+        text-transform: uppercase; 
+        margin-bottom: 2px; 
+        margin-left: 40px;
+        /* padding: 7px; */        
+        
+    }
+     .move_baner { 
+        height: 280px;   
+     }
+     .baner {
+        height: 440px;
+    }  
+    .main__baner {
+        top: 380px;
+       
+    }
+     .move_baner-description {
+         text-align: justify;
+         width: 85%;
+     }
+     .move_baner-picture {
+         width: 140px;
+     }   
+    .nav {      
+        width: 100vw;     
+      }
+    .nav .menu-nav__link {
+        font-size: 18px;
+        line-height: 1;
+    }
+    
+    .footer__menu a{
+        margin: 2px;
+        font-size: 12px;
+   }
+   .footer__fonts {
+       font-size: 10px;
+   }
+}
+/*----------------320-----------*/
+ @media (max-width: 320px) {
+    
+    .btn {
+        color: var(--primary-color);  
+    }
+    .baner__p {
+        padding: 9px;
+        font-size: 15px;
+    } 
+   .move_baner { 
+        height: 360px;
+        width: 100%;
+    }
+    .accesories__h2 {
+        font-size: 20px;
+    }
+    .accesories__title {
+        height: 393px;
+    }
+    .move_baner-description {
+        text-align: justify;
+        width: 90%;
+       
+    }
+    .move_baner-picture {
+         width: 140px;
+    }
+    .nav {      
+        width: 100vw;
+        opacity: 0.9;      
+    }
+    .nav .menu-nav__link {
+        font-size: 18px;
+        line-height: 0.5;
+    }
+    
+   .about__us__title-second {
+       margin-top: 100px;
+   }
+   .accesories {
+    position: relative;
+    height: 1970px;
+   }
+    .accesories__description {
+    font-size: 14px;
+    }
+} 
